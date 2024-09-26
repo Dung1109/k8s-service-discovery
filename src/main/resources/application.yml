@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: k8s-springboot-discovery
+# use url: jdbc:postgresql://localhost:5432/postgres
+  datasource:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
