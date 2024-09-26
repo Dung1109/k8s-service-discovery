@@ -40,7 +40,7 @@ jar {
 }
 
 bootBuildImage {
-    environment = ["BP_JVM_VERSION" : "22"]
+    environment = ["BP_JVM_VERSION" : "23"]
     imageName = "tayduong/k8s-springboot-discovery"
 }
 

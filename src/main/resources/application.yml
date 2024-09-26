@@ -3,6 +3,9 @@ spring:
     name: k8s-springboot-discovery
 # use url: jdbc:postgresql://localhost:5432/postgres
   datasource:
+    url: jdbc:postgresql://postgres-service:5432/tayduong
+    username: postgres
+    password: secret
 
   jpa:
     hibernate:
