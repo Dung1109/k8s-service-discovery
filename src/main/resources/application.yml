@@ -1,13 +1,17 @@
-spring:
-  application:
-    name: k8s-springboot-discovery
-# use url: jdbc:postgresql://localhost:5432/postgres
-  datasource:
-    url: jdbc:postgresql://postgres-service:5432/tayduong
-    username: postgres
-    password: secret
+server:
+    port: 8080
 
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
+spring:
+    application:
+        name: k8s-springboot-discovery
+    # use url: jdbc:postgresql://localhost:5432/postgres
+    datasource:
+        # ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/mydb}
+        url: ${ SPRING_DATASOURCE_URL:jdbc:postgresql://local:5432/tayduong}
+        username: ${ SPRING_DATASOURCE_USERNAME:postgres }
+        password: ${ SPRING_DATASOURCE_PASSWORD:secret }
+
+    jpa:
+        hibernate:
+            ddl-auto: create
+        show-sql: true

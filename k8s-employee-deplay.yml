@@ -17,8 +17,32 @@ spec:
         spec:
             containers:
                 -   name: employee-service
-                    image: 'docker.io/library/k8s-springboot-discovery:0.0.1-SNAPSHOT'
+                    image: tayduong/k8s-springboot-discovery:latest
                     imagePullPolicy: Never
                     ports:
                         -   containerPort: 8080
+                    env:
+                        -   name: SPRING_DATASOURCE_URL
+                            value: jdbc:postgresql://postgres-service:5432/tayduong
+                        -   name: SPRING_DATASOURCE_USERNAME
+                            value: postgres
+                        -   name: SPRING_DATASOURCE_PASSWORD
+                            value: secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: employee-service
+    labels:
+        app: employee
+spec:
+    type: NodePort
+    ports:
+        -   port: 8080
+            targetPort: 8080
+            nodePort: 30008
+            protocol: TCP
+            name: 'http'
+    selector:
+        app: employee
 
