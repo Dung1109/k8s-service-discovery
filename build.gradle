@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
+        languageVersion = JavaLanguageVersion.of(22)
     }
 }
 
@@ -40,7 +40,7 @@ jar {
 }
 
 bootBuildImage {
-    environment = ["BP_JVM_VERSION" : "23"]
+    environment = ["BP_JVM_VERSION" : "22"]
     imageName = "tayduong/k8s-springboot-discovery"
 }
 
