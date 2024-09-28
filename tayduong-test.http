@@ -21,9 +21,8 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:30008/employee?
-    employeeName={{$random.alphanumeric(8)}}
+POST http://localhost:30008/employee?employeeName=thanh
 
 ###
 
-GET http://localhost:30008/employee/aacb79b6-30d2-4115-b845-45a323032cbe
+GET http://localhost:30008/employee/046e5053-f6f2-45fb-99ee-3a2784cf5fa5
