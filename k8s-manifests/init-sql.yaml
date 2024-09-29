@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: init-sql
+data:
+    # kv format
+  init.sql: |
+      CREATE TABLE employee
+      (
+          id            VARCHAR(255) NOT NULL,
+          employee_name VARCHAR(255),
+          CONSTRAINT pk_employee PRIMARY KEY (id)
+      );
+

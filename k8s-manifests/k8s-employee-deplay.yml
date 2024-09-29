@@ -25,9 +25,15 @@ spec:
                         -   name: SPRING_DATASOURCE_URL
                             value: jdbc:postgresql://postgres-service:5432/tayduong
                         -   name: SPRING_DATASOURCE_USERNAME
-                            value: postgres
+                            valueFrom:
+                                secretKeyRef:
+                                    name: postgres-secret
+                                    key: POSTGRES_USER
                         -   name: SPRING_DATASOURCE_PASSWORD
-                            value: secret
+                            valueFrom:
+                                secretKeyRef:
+                                    name: postgres-secret
+                                    key: POSTGRES_PASSWORD
 ---
 apiVersion: v1
 kind: Service
@@ -40,7 +46,7 @@ spec:
     ports:
         -   port: 8080
             targetPort: 8080
-            nodePort: 30008
+            nodePort: 30007
             protocol: TCP
             name: 'http'
     selector:

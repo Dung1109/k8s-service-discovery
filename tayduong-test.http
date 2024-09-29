@@ -21,8 +21,16 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:30008/employee?employeeName=thanh
+POST http://localhost:30007/employee?employeeName=tuan
 
 ###
 
-GET http://localhost:30008/employee/046e5053-f6f2-45fb-99ee-3a2784cf5fa5
+GET http://localhost:30007/employee/69b68f21-a92f-4b6f-b6c8-62763cb0e8e9
+
+###
+
+GET http://localhost:30007/employee
+
+###
+
+POST http://localhost:9090/employee?employeeName=quan
